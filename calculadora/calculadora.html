@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css" class="css">
+    <script>
+    window.onload= function(){
+        
+        
+        document.getElementById("climpar").onclick = limpar;
+        document.getElementById("cum").onclick = function(){preencher(1)}
+        document.getElementById("cdois").onclick = function(){preencher(2)}
+        document.getElementById("ctres").onclick = function(){preencher(3)}
+        document.getElementById("cquatro").onclick = function(){preencher(4)}
+        document.getElementById("ccinco").onclick = function(){preencher(5)}
+        document.getElementById("cseis").onclick = function(){preencher(6)}
+        document.getElementById("csete").onclick = function(){preencher(7)}
+        document.getElementById("coito").onclick = function(){preencher(8)}
+        document.getElementById("cnove").onclick = function(){preencher(9)}
+        document.getElementById("czero").onclick = function(){preencher(0)}
+        document.getElementById("csoma").onclick = function(){preencher('+')}
+        document.getElementById("csub").onclick = function(){preencher('-')}
+        document.getElementById("cmul").onclick = function(){preencher('*')}
+        document.getElementById("cdivi").onclick = function(){preencher('/')}
+        document.getElementById("cponto").onclick = function(){preencher('.')}
+        document.getElementById("cigual").onclick = function(){calculo()}
+        document.getElementById("cmrc").onclick = function(){ preencher('**');}
+        document.getElementById("cmenos").onclick = function(){arre(document.getElementById("res").value)}
+        document.getElementById("cmais").onclick = function(){raiz(document.getElementById("res").value)}
+        
+        
+        
+      
+        
+        
+        
+    }
+    
+    function limpar(){
+        document.getElementById("res").value= "";
+    }
+        
+    function preencher (v){
+        return document.getElementById("res").value += v;     
+    }
+        
+    function calculo (){
+        var result = 0;
+        result= document.getElementById("res").value
+        document.getElementById("res").value = "";
+        document.getElementById("res").value = eval(result)
+        
+    }
+        
+    function arre(m){
+            document.getElementById("res").value = Math.round(m)         
+    }
+        
+    function raiz(n){
+            document.getElementById("res").value = Math.sqrt(n)
+    }    
+    
+    </script>
+</head>
+<body>
+    <form id="calculadora">
+        <div class="visor">
+            <input type="text" name="res" id="res" value="" class="visor_input">
+        </div>
+        <div class="calc_linhas">
+            <button type="button" class="calc_botao_fun" id="cmrc" value="**">x^y</button>
+            <button type="button" class="calc_botao_fun" id="cmenos" value="≈">≈</button>
+            <button type="button" class="calc_botao_fun" id="cmais" value="√">√</button>
+            <button type="button" class="calc_botao_op" id="cdivi" value="÷">÷</button>
+        </div>
+        <div class="calc_linhas">
+            <button type="button" class="calc_botao" id="csete" value="7">7</button>
+            <button type="button" class="calc_botao" id="coito" value="8">8</button>
+            <button type="button" class="calc_botao" id="cnove" value="9">9</button>
+            <button type="button" class="calc_botao_op" id="cmul" value="x">x</button>
+        </div>
+        <div class="calc_linhas">
+            <button type="button" class="calc_botao" id="cquatro" value="4">4</button>
+            <button type="button" class="calc_botao" id="ccinco" value="5">5</button>
+            <button type="button" class="calc_botao" id="cseis" value="6">6</button>
+            <button type="button" class="calc_botao_op" id="csub" value="-">-</button>
+        </div>
+        <div class="calc_linhas">
+            <button type="button" class="calc_botao" id="cum" value="1">1</button>
+            <button type="button" class="calc_botao" id="cdois" value="2">2</button>
+            <button type="button" class="calc_botao" id="ctres" value="3">3</button>
+            <button type="button" class="calc_botao_op" id="csoma" value="+">+</button>
+        </div>
+        <div class="calc_linhas">
+            <button type="button" class="calc_botao" id="czero" value="0">0</button>
+            <button type="button" class="calc_botao" id="cponto" value=".">.</button>
+            <button type="button" class="calc_botao" id="climpar">C</button>
+            <button type="button" class="calc_botao_res" id="cigual">=</button>
+        </div>
+    </form>
+</body>
+</html>
